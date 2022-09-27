@@ -1,7 +1,39 @@
-body{
-    background-color: hsl(30, 38%, 92%)
+
+*{
+    margin: 0;
 }
 
-.card{
+body{
+    background-color: hsl(30, 38%, 92%);
+}
+
+.container{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
     
+}
+
+.card {
+    width: 500px;
+    height: 350px;
+    background: #fff;
+    border-radius: 12px;
+    display: flex;
+
+    }
+
+.image{
+    background-color: black;
+    width: 50%;
+    height: 100%;
+    border-radius: 12px;
+}
+
+.text{
+    background-color: aqua;
+    width: 50%;
+    height: 100%;
+    border-radius: 12px;
 }
