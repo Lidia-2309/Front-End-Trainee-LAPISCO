@@ -3,25 +3,26 @@ import { Styles } from "./styles";
 
 export const Home = () => {
 
-    const [altura, setAltura] = useState<number>(0);
-    const [peso, setPeso] = useState<number>(0);
-    const [resultado, setResultado] = useState<string>('');
+    const [height, setHeight] = useState<number>(0);
+    const [weight, setWeight] = useState<number>(0);
+    const [result, setResult] = useState<string>('');
     const [condition, setCondition] = useState<string>('');
 
     const calculate = () => {
-        const imc = peso*10000/(altura*altura);
+        const imc = weight*10000/(height*height);
         const res = ''+ imc;
-        setResultado(res)
-        if(imc<18.5){
-            setCondition("Abaixo do Peso")
+        setResult(res)
+
+        if(imc < 18.5){
+            setCondition("Abaixo do peso")
         }
-        if(18.5<=imc && imc<=24.9){
-            setCondition("Peso Normal")
+        if(18.5 <= imc && imc <= 24.9){
+            setCondition("Saudável :D")
         }
-        if(25<=imc && imc<=29.9){
-            setCondition("Acima do Peso")
+        if(25 <= imc && imc <= 29.9){
+            setCondition("Acima do peso")
         }
-        if(imc>=30){
+        if(imc >= 30){
             setCondition("Obesidade")
         }
     };
@@ -33,21 +34,21 @@ export const Home = () => {
                     <h1>Calculadora BMI</h1>
                     <label>
                         <input type="number" 
-                            name="altura" 
-                            onChange={(e) => setAltura(+e.target.value)} 
+                            name="height" 
+                            onChange={(e) => setHeight(+e.target.value)} 
                             placeholder="Insira sua altura (cm): "
                         />
                     </label>
                     <label>
                         <input type="number" 
-                            name="peso" 
-                            onChange={(e) => setPeso(+e.target.value)}
+                            name="weight" 
+                            onChange={(e) => setWeight(+e.target.value)}
                             placeholder="Insira seu peso (kg): "
                         />
                     </label>
                     <button onClick={calculate}>Calcular BMI</button>
-                    <div className="BMI"><h4>BMI: {resultado}</h4></div>
-                    <div className="Condição"><h4>Condição: {condition}</h4></div>
+                    <div className="BMI"><h4><strong>BMI: </strong>{result}</h4></div>
+                    <div className="Condição"><h4><strong>Condição: </strong>{condition}</h4></div>
                 </div>
             </div>
         </Styles>

@@ -29,6 +29,10 @@ h1{
     padding-bottom: 2rem;
 }
 
+h4{
+    font-weight: normal;
+}
+
 input{
     display: flex;
     background: white;
@@ -56,11 +60,16 @@ input:focus:-ms-input-placeholder {
 }
 
 button{
-    border: none;
-    border-radius: 8px;
-    padding: 1rem 2rem;
+    font-size: 1.5vw;
     cursor: pointer;
     background-color: rgb(232, 185, 74);
     margin-bottom: 1rem;
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;
+    outline: none;
+    border-radius: 8px;
+    padding: 1rem 2rem;
 }
 `;
